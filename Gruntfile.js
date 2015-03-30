@@ -23,6 +23,17 @@ module.exports = function(grunt) {
       task: {
         src: ['app/index.html'],
       }
+    },
+    watch: {
+      options: {
+        livereload: true
+      },
+      styles: {
+        files: ['app/css/main.css'],
+        options: {
+          livereload: true
+        }
+      },
     }
   });
 
@@ -30,10 +41,11 @@ module.exports = function(grunt) {
 // ========================================================
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-wiredep');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 // ========================================================
 
 // Register npm tasks
 // ========================================================
-  grunt.registerTask('default', ['connect', 'wiredep']);
+  grunt.registerTask('default', ['connect', 'wiredep', 'watch']);
 // ======================================================== 
 };
