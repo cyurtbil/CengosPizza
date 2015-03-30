@@ -15,7 +15,13 @@ module.exports = function(grunt) {
           base: 'app',
           keepalive: true,
           livereload: true,
-          open: true
+          open: true,
+          middleware: function(connect) {
+            return [
+              connect().use('/bower_components', connect.static('./bower_components')),
+              connect.static('app')
+            ];
+          }
         }
       }
     },
@@ -27,6 +33,10 @@ module.exports = function(grunt) {
     watch: {
       options: {
         livereload: true
+      },
+      bower: {
+        files: ['bower.json'],
+        tasks: ['wiredep']
       },
       styles: {
         files: ['app/css/main.css'],

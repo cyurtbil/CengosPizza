@@ -11,4 +11,8 @@ section {
   margin: 10px 2% 10px 0.5%;
 }
 
+section h3 {
+  text-align: center;
+}
+
 /*=======================================*/
