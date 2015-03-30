@@ -2,7 +2,11 @@
 /*Checout Form*/
 /*=======================================*/
 form {
-  border: 1px solid black;
+  border-top: 1px solid black;
+}
+
+form h3 {
+  text-align: center;
 }
 
 form input[type="text"] {
@@ -24,7 +28,7 @@ form input[type="submit"] {
   margin-bottom: 40px;
 }
 
-form input:nth-child(4) {
+form input:nth-child(5) {
   margin-left: 96px;
 }
 /*=======================================*/
