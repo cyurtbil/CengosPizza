@@ -37,5 +37,13 @@ section p {
   margin: 46px;
 }
 
+#proceed {
+  width: 79%;
+  margin: 10px 0% 30px 11%;
+  height: 40px;
+  font-size: 1em;
+}
+}
+
 
 /*=======================================*/
