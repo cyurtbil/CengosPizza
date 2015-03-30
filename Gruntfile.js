@@ -43,7 +43,16 @@ module.exports = function(grunt) {
         options: {
           livereload: true
         }
-      },
+      }
+    },
+    karma: {
+      unit: {
+        configFile: 'test/pizza.conf.js',
+        options: {
+          files: ['**.spec.js']
+        },
+        autoWatch: true
+      }
     }
   });
 
@@ -52,10 +61,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-wiredep');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-karma');
 // ========================================================
 
 // Register npm tasks
 // ========================================================
-  grunt.registerTask('default', ['connect', 'wiredep', 'watch']);
+  grunt.registerTask('default', ['connect', 'wiredep', 'watch', 'karma']);
 // ======================================================== 
 };
