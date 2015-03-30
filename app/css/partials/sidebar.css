@@ -9,6 +9,7 @@ aside {
   float: left;
   border: 1px solid black;
   margin: 10px 0.5% 10px 2%;
+  position: fixed;
 }
 
 aside ul {

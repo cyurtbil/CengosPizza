@@ -23,16 +23,19 @@ section p {
   height: 211px;
   width: 200px;
   border: 1px solid black;
-  float: left;
   margin: 0px 0% 35px 8.6%;
   display: inline-block;
   border-radius: 3px;
 }
 
 .pizza h4 {
-  text-align: center
+  text-align: center;
 }
 
+#order-summary h4,
+#price {
+  margin: 46px;
+}
 
 
 /*=======================================*/
