@@ -1,0 +1,14 @@
+/*=======================================*/
+/*Pizza Section*/
+/*=======================================*/
+
+section {
+  width: 70%;
+  height: 400px;
+  background-color: grey;
+  float: right;
+  border: 1px solid black;
+  margin: 10px 2% 10px 0.5%;
+}
+
+/*=======================================*/

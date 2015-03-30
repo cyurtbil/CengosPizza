@@ -1,0 +1,26 @@
+/*=======================================*/
+/*Sidebar*/
+/*=======================================*/
+
+aside {
+  width: 24%;
+  height: 400px;
+  background-color: grey;
+  float: left;
+  border: 1px solid black;
+  margin: 10px 0.5% 10px 2%;
+}
+
+aside ul {
+  list-style: none;
+  padding: 0px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+aside ul li {
+  font-size: 1.2em;
+  padding: 10px 0%;
+}
+
+/*=======================================*/
