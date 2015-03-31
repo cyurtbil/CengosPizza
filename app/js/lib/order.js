@@ -54,10 +54,17 @@ var calcTotalPrice = function() {
   return sum;
 };
 
+var changeOrder = function() {
+  $('form').slideUp(300);
+  $('#js-pizza-container').slideDown(300);
+  $('#js-price p input').show();
+};
+
 var proceed = function() {
   $('form').slideDown(300);
   $('#js-pizza-container').slideUp(300);
   $('p strong').text('Total: $' + Order.payment);
+  $('#js-price p input').hide();
 };
 
 var checkout = function() {
