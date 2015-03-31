@@ -4,12 +4,15 @@ var selectPizza = function(event) {
   selectedPizza = PizzaChain[selectedCity].pizzas.filter(function(pizza) {
     return pizza.type === $(event.delegateTarget).attr('id');
   })[0];
+
   Order.items.push(selectedPizza);
   var groupedItems = _.groupBy(Order.items, 'name');
   var quantity = groupedItems[selectedPizza.name].length;
 
   if(quantity > 1) {
-    var filteredElement = $('#price p').filter(function() {return $(this).text() === selectedPizza.name});
+    var filteredElement = $('#price p').filter(function() {
+      return $(this).text() === selectedPizza.name
+    });
     filteredElement.children().eq(0).val(quantity);
   } else {
     $('<p>').text(selectedPizza.name).append('<input type="number" value="1">' + '<input type="submit" id="remove" value="Remove">').appendTo('#price');
@@ -28,10 +31,12 @@ var deselectPizza = function(event) {
   if(quantity > 1) {
     deselectedPizzaIndex = Order.items.indexOf(deselectedPizzas[0]);
     Order.items.splice(deselectedPizzaIndex, 1);
-    quantity -= 1
+    quantity -= 1;
     $(event.target).siblings().val(quantity);
   } else {
-    debugger
+    deselectedPizzaIndex = Order.items.indexOf(deselectedPizzas[0]);
+    Order.items.splice(deselectedPizzaIndex, 1);
+    $(event.target).parent().remove();
   }
 }
 
