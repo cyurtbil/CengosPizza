@@ -18,7 +18,7 @@ var selectPizzaEvent = function() {
 };
 
 var deselectPizzaEvent = function() {
-  $('#price').on('click', function(event) {
+  $('#price').delegate('#remove', 'click', function(event) {
     deselectPizza(event);
     totalPrice = calcTotalPrice();
     Order.payment = totalPrice.toPrecision(4);
