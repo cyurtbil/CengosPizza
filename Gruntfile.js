@@ -39,7 +39,7 @@ module.exports = function(grunt) {
         tasks: ['wiredep']
       },
       styles: {
-        files: ['app/css/main.css'],
+        files: ['app/css/main.css', 'app/css/partials/*.css'],
         options: {
           livereload: true
         }
