@@ -33,3 +33,12 @@ var proceed = function() {
   $('form').slideDown(300);
   $('p strong').text('Total: $' + Order.payment);
 };
+
+var checkout = function() {
+  var customerName = $('form input').eq(0).val();
+  var customerAddress = $('form input').eq(1).val();
+  var customerCreditCard = $('form input').eq(2).val();
+  Order.customers.push({name: customerName, address: customerAddress, creditCard: customerCreditCard});
+  $('section#pizza-console').hide();
+  $('section#order-completed').show();
+};
