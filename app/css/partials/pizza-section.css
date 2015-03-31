@@ -15,6 +15,11 @@ section h3 {
   text-align: center;
 }
 
+section h2 {
+  text-align: center;
+  margin: 187px 0%;
+}
+
 section p {
   margin: 30px;
   font-size: 1.05em;
