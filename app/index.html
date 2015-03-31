@@ -14,7 +14,7 @@
       <ul id="cities"></ul>
     </aside>
 
-    <section>
+    <section id="pizza-console">
       <h3 id="city-name">City</h3>
       <p>Select Pizza</p>
       <div id="pizza-container">
@@ -31,24 +31,28 @@
           <ul class="toppings"></ul>
         </div>
       </div>
-      <div id="order-summary">
+      <div id="order-summary" hidden="hidden">
         <h4>Order Summary</h4>
         <div id="price">
           <div></div>
         </div>
+        <button type="submit" id="proceed">Proceed</button>
       </div>
 
-      <button type="submit" id="proceed">Proceed</button>
 
       <form hidden="hidden">
         <h3>Checkout</h3>
         <p><strong></strong></p>
         <input type="text" placeholder="Name" hidden>
         <input type="text" placeholder="Address">
-        <input type="text" placeholder="Credit Card Information">
+        <input type="text" placeholder="Credit Card Number">
         <input type="submit" value="Change Order">
         <input type="submit" value="Checkout">
       </form>
+    </section>
+
+    <section id="order-completed" hidden="hidden">
+      <h4>Order Summary</h4>
     </section>
 
   </div>

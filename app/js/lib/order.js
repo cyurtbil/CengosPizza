@@ -5,7 +5,7 @@ var selectPizza = function(event, total) {
   })[0];
 
   $('<p>').text(selectedPizza.name).appendTo('div#price');
-
+  $('#order-summary').slideDown(300);
   return getPrices(selectedPizza, total);
 };
 

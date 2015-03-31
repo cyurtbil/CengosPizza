@@ -20,3 +20,16 @@ var proceedEvent = function() {
     proceed();
   });
 };
+
+var checkoutEvent = function() {
+  $('form input[value="Checkout"]').on('click', function(event) {
+    event.preventDefault();
+    var customerName = $('form input').eq(0).val();
+    var customerAddress = $('form input').eq(1).val();
+    var customerCreditCard = $('form input').eq(2).val();
+    Order.customers.push({name: customerName, address: customerAddress, creditCard: customerCreditCard});
+    $('section#pizza-console').hide();
+    $('section#order-completed').show();
+    
+  });
+};
