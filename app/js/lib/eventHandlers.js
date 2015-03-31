@@ -49,9 +49,9 @@ var changeOrderEvent = function() {
   });
 };
 
-var incrementQuantityEvent = function() {
+var changeQuantityEvent = function() {
   $('#price').delegate('input[type="number"]', 'keyup change', function(event) {
-    incrementQuantity(event);
+    changeQuantity(event);
     var totalPrice = calcTotalPrice();
     Order.payment = totalPrice.toPrecision(4);
     $('#price #total').text('Total: $' + Order.payment);
