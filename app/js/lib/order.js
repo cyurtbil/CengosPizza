@@ -25,18 +25,8 @@ var deselectPizza = function(event) {
   deselectedPizzas = Order.items.filter(function(item) {
     return item.name === $(event.target).parent().text();
   });
-  var groupedItems = _.groupBy(Order.items, 'name');
-  var quantity = groupedItems[deselectedPizzas[0].name].length;
-  if(quantity > 1) {
-    deselectedPizzaIndex = Order.items.indexOf(deselectedPizzas[0]);
-    Order.items.splice(deselectedPizzaIndex, 1);
-    quantity -= 1;
-    $(event.target).siblings().val(quantity);
-  } else {
-    deselectedPizzaIndex = Order.items.indexOf(deselectedPizzas[0]);
-    Order.items.splice(deselectedPizzaIndex, 1);
-    $(event.target).parent().remove();
-  }
+  Order.items = _.without(Order.items, deselectedPizzas[0]);
+  $(event.target).parent().remove();
 }
 
 var incrementQuantity = function(event) {
