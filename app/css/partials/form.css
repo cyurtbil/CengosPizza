@@ -28,7 +28,11 @@ form input[type="submit"] {
   margin-bottom: 40px;
 }
 
-form input:nth-child(5) {
+form input:nth-child(6) {
   margin-left: 96px;
+}
+
+form p strong {
+  margin-left: 8%;
 }
 /*=======================================*/
