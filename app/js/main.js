@@ -2,7 +2,8 @@
 
 
 $(document).ready(function() {
-  selectCity();
+  selectCityEvent();
+  selectPizzaEvent();
 });
 
 loadCities();
