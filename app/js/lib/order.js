@@ -1,16 +1,16 @@
 var selectPizza = function(event) {
-  var selectedCity, selectedPizza;
+  var selectedCity, selectedPizza, groupedItems, quantity, filteredElement;
   selectedCity = findSelectedCity();
   selectedPizza = PizzaChain[selectedCity].pizzas.filter(function(pizza) {
     return pizza.type === $(event.delegateTarget).attr('id');
   })[0];
 
   Order.items.push(selectedPizza);
-  var groupedItems = _.groupBy(Order.items, 'name');
-  var quantity = groupedItems[selectedPizza.name].length;
+  groupedItems = _.groupBy(Order.items, 'name');
+  quantity = groupedItems[selectedPizza.name].length;
 
   if(quantity > 1) {
-    var filteredElement = $('#price p').filter(function() {
+    filteredElement = $('#price p').filter(function() {
       return $(this).text() === selectedPizza.name
     });
     filteredElement.children().eq(0).val(quantity);
@@ -30,19 +30,22 @@ var deselectPizza = function(event) {
 }
 
 var changeQuantity = function(event) {
-  var currentValue, newValue;
+  var currentValue, newValue, selectedPizzaIndex, i;
   selectedPizzas = Order.items.filter(function(item) {
     return item.name === $(event.target).parent().text();
   });
   currentValue = selectedPizzas.length;
   newValue = parseInt($(event.target).val());
   if(newValue > currentValue) {
-    for(var i = 0; i < newValue - currentValue; i++)
+    for(i = 0; i < newValue - currentValue; i++)
       Order.items.push(selectedPizzas[0]);
   } else if(newValue < currentValue) {
-    for(var i = 0; i < currentValue - newValue; i++) {
-      var selectedPizzaIndex = Order.items.indexOf(selectedPizzas[0]);
+    for(i = 0; i < currentValue - newValue; i++) {
+      selectedPizzaIndex = Order.items.indexOf(selectedPizzas[0]);
       Order.items.splice(selectedPizzaIndex, 1);
+      if(newValue === 0) {
+        $(event.target).parent().remove();
+      }
     };
   }
 };
