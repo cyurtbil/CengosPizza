@@ -22,18 +22,14 @@ var selectPizza = function(event) {
 
 var deselectPizza = function(event) {
   var deselectedPizzas, deselectedPizzaIndex;
-  deselectedPizzas = Order.items.filter(function(item) {
-    return item.name === $(event.target).parent().text();
-  });
+  deselectedPizzas = findPizza(event);
   Order.items = _.without(Order.items, deselectedPizzas[0]);
   $(event.target).parent().remove();
 }
 
 var changeQuantity = function(event) {
   var currentValue, newValue, selectedPizzaIndex, i;
-  selectedPizzas = Order.items.filter(function(item) {
-    return item.name === $(event.target).parent().text();
-  });
+  selectedPizzas = findPizza(event);
   currentValue = selectedPizzas.length;
   newValue = parseInt($(event.target).val());
   if(newValue > currentValue) {
@@ -50,18 +46,11 @@ var changeQuantity = function(event) {
   }
 };
 
-var findSelectedCity = function() {
-  for(var city in PizzaChain)
-    if(!!PizzaChain[city].isSelected)
-        return city;
-};
-
 var calcTotalPrice = function() {
   var sum = 0;
   Order.items.forEach(function(item) {
     sum += item.price;
   });
-
   return sum;
 };
 
@@ -75,7 +64,6 @@ var checkout = function() {
   var customerName = $('form input').eq(0).val(), 
   customerAddress = $('form input').eq(1).val(), 
   customerCreditCard = $('form input').eq(2).val();
-
   Order.customer = {name: customerName, address: customerAddress, creditCard: customerCreditCard};
   $('section#pizza-console').hide();
   $('section#order-completed').show();
