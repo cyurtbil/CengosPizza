@@ -7,11 +7,12 @@ var selectPizza = function(event) {
   Order.items.push(selectedPizza);
   var groupedItems = _.groupBy(Order.items, 'name');
   var quantity = groupedItems[selectedPizza.name].length;
+
   if(quantity > 1) {
-    var filteredElement = $('#price p').filter(function() {return $(this).text().replace(/\sx./g, '') === selectedPizza.name});
-    filteredElement.children().eq(1).val(quantity);
+    var filteredElement = $('#price p').filter(function() {return $(this).text() === selectedPizza.name});
+    filteredElement.children().eq(0).val(quantity);
   } else {
-    $('<p>').text(selectedPizza.name).append('<input type="number" value="1">').prepend('<span> x </span>').appendTo('#price');
+    $('<p>').text(selectedPizza.name).append('<input type="number" value="1">' + '<input type="submit" id="remove" value="Remove">').appendTo('#price');
   }
   $('#order-summary').slideDown(300);
 };
@@ -19,15 +20,18 @@ var selectPizza = function(event) {
 var deselectPizza = function(event) {
   var selectedCity, selectedPizza, deselectedPizzaIndex;
   selectedCity = findSelectedCity();
-  deselectedPizza = PizzaChain[selectedCity].pizzas.filter(function(pizza) {
-    return pizza.name === $(event.target).parent().text().replace(/\sx./g, '');
-  })[0];
-  deselectedPizzaIndex = Order.items.indexOf(deselectedPizza);
-  Order.items.splice(deselectedPizzaIndex, 1);
-  if(deselectedPizzaIndex < 0) {
-    $('#price p').last().fadeOut(200);
+  deselectedPizzas = Order.items.filter(function(item) {
+    return item.name === $(event.target).parent().text();
+  });
+  var groupedItems = _.groupBy(Order.items, 'name');
+  var quantity = groupedItems[deselectedPizzas[0].name].length;
+  if(quantity > 1) {
+    deselectedPizzaIndex = Order.items.indexOf(deselectedPizzas[0]);
+    Order.items.splice(deselectedPizzaIndex, 1);
+    quantity -= 1
+    $(event.target).siblings().val(quantity);
   } else {
-    $('#price p').eq(deselectedPizzaIndex).fadeOut(200);
+    debugger
   }
 }
 
