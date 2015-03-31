@@ -3,7 +3,7 @@
 /*=======================================*/
 
 section {
-  width: 70%;
+  width: 74%;
   background-color: rgb(229, 226, 226);
   float: right;
   border: 1px solid black;
@@ -29,7 +29,8 @@ section p {
   border-radius: 3px;
 }
 
-.pizza:hover {
+.pizza:hover,
+#proceed:hover {
   background-color: lightblue;
   cursor: pointer;
 }
@@ -48,6 +49,10 @@ ul.toppings {
 ul.toppings li {
   padding: 0px;
   margin: 20px auto;
+}
+
+#order-summary {
+  border-top: 1px solid black;
 }
 
 #order-summary h4,

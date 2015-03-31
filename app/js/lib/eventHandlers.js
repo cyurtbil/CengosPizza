@@ -10,6 +10,12 @@ var selectPizzaEvent = function() {
   $('.pizza').on('click', function(event) {
     var prices = selectPizza(event, empty);
     var totalPrice = calcTotalPrice(prices);
-    $('div#price div').text('Total: ' + totalPrice);
+    $('div#price div').text('Total: $' + totalPrice.toPrecision(4));
+  });
+};
+
+var proceed = function() {
+  $('#proceed').on('click', function() {
+    $('form').slideDown(300);
   });
 };
