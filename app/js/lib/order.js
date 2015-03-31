@@ -1,12 +1,11 @@
-var selectPizza = function(event, total) {
+var selectPizza = function(event) {
   var selectedCity = findSelectedCity();
   var selectedPizza = PizzaChain[selectedCity].pizzas.filter(function(pizza) {
     return pizza.type === $(event.delegateTarget).attr('id');
   })[0];
-
+  Order.items.push(selectedPizza);
   $('<p>').text(selectedPizza.name).appendTo('div#price');
   $('#order-summary').slideDown(300);
-  return getPrices(selectedPizza, total);
 };
 
 var findSelectedCity = function() {
@@ -15,15 +14,10 @@ var findSelectedCity = function() {
         return city;
 };
 
-var getPrices = function(selectedPizza, prices) {
-  prices.push(selectedPizza.price);
-  return prices;
-};
-
-var calcTotalPrice = function(prices) {
+var calcTotalPrice = function() {
   var sum = 0;
-  prices.forEach(function(price) {
-    sum += price;
+  Order.items.forEach(function(item) {
+    sum += item.price;
   });
 
   return sum;

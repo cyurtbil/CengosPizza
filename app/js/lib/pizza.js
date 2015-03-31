@@ -68,4 +68,4 @@ var PizzaChain = {
 };
 
 
-var Order = Order || {};
+var Order = Order || {items: []};
