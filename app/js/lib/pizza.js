@@ -66,3 +66,6 @@ var PizzaChain = {
     ]
   }
 };
+
+
+var Order = Order || {};
