@@ -10,14 +10,14 @@ var selectPizza = function(event) {
   quantity = groupedItems[selectedPizza.name].length;
 
   if(quantity > 1) {
-    filteredElement = $('#price p').filter(function() {
+    filteredElement = $('#js-price p').filter(function() {
       return $(this).text() === selectedPizza.name
     });
     filteredElement.children().eq(0).val(quantity);
   } else {
-    $('<p>').text(selectedPizza.name).append('<input type="number" value="1">' + '<input type="submit" id="remove" value="Remove">').appendTo('#price');
+    $('<p>').text(selectedPizza.name).append('<input type="number" value="1">' + '<input type="submit" id="js-remove" value="Remove">').appendTo('#js-price');
   }
-  $('#order-summary').slideDown(300);
+  $('#js-order-summary').slideDown(300);
 };
 
 var deselectPizza = function(event) {
@@ -56,7 +56,7 @@ var calcTotalPrice = function() {
 
 var proceed = function() {
   $('form').slideDown(300);
-  $('#pizza-container').slideUp(300);
+  $('#js-pizza-container').slideUp(300);
   $('p strong').text('Total: $' + Order.payment);
 };
 
@@ -65,6 +65,6 @@ var checkout = function() {
   customerAddress = $('form input').eq(1).val(), 
   customerCreditCard = $('form input').eq(2).val();
   Order.customer = {name: customerName, address: customerAddress, creditCard: customerCreditCard};
-  $('section#pizza-console').hide();
-  $('section#order-completed').show();
+  $('section#js-pizza-console').hide();
+  $('section#js-order-completed').show();
 };

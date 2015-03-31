@@ -13,19 +13,19 @@ aside {
   border-radius: 4px;
 }
 
-aside ul#cities {
+aside ul#js-cities {
   list-style: none;
   padding: 0px;
   text-align: center;
   margin: 0px;
 }
 
-aside ul#cities li {
+aside ul#js-cities li {
   font-size: 1.2em;
   padding: 10px 0%;
 }
 
-aside ul#cities li:hover,
+aside ul#js-cities li:hover,
 .hovered {
   cursor: pointer;
   background-color: lightblue;

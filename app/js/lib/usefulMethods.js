@@ -3,7 +3,7 @@
 var savePrice = function() {
   var totalPrice = calcTotalPrice();
   Order.payment = totalPrice.toPrecision(4);
-  $('#price #total').text('Total: $' + Order.payment);
+  $('#js-price #js-total').text('Total: $' + Order.payment);
 };
 
 var findPizza = function(event) {

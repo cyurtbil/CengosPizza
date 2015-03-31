@@ -1,13 +1,15 @@
+'use strict';
+
 var loadCities = function() {
   for(var city in PizzaChain)
-    $('<li>').text(city).addClass(city.replace(/\s+/g, '')).appendTo('ul#cities');
+    $('<li>').text(city).addClass(city.replace(/\s+/g, '')).appendTo('ul#js-cities');
 };
 
 var loadPizzas = function(selectedCity, event) {
   unloadPizzas();
   PizzaChain[selectedCity].isSelected = true;
   var pizzas = PizzaChain[selectedCity].pizzas;
-  $('section h3#city-name').text(selectedCity);
+  $('section h3#js-city-name').text(selectedCity);
   pizzas.forEach(function(pizza) {
     $('#' + pizza.type + ' h4').text(pizza.name);
     pizza.toppings.forEach(function(topping) {
@@ -19,7 +21,7 @@ var loadPizzas = function(selectedCity, event) {
 var unloadPizzas = function() {
   for(var city in PizzaChain) {
     if(!!PizzaChain[city].isSelected) {
-      $('ul#cities li.' + city.replace(/\s+/g, '')).removeClass('hovered');
+      $('ul#js-cities li.' + city.replace(/\s+/g, '')).removeClass('hovered');
       PizzaChain[city].pizzas.forEach(function(pizza) {
         pizza.toppings.forEach(function(topping, index) {
           $('#' + pizza.type + ' ul.toppings li').eq(0).remove();

@@ -25,7 +25,7 @@ section p {
   font-size: 1.05em;
 }
 
-.pizza {
+.js-pizza {
   height: 211px;
   width: 200px;
   border: 1px solid black;
@@ -34,13 +34,13 @@ section p {
   border-radius: 3px;
 }
 
-.pizza:hover,
-#proceed:hover {
+.js-pizza:hover,
+#js-proceed:hover {
   background-color: lightblue;
   cursor: pointer;
 }
 
-.pizza h4 {
+.js-pizza h4 {
   text-align: center;
 }
 
@@ -56,21 +56,21 @@ ul.toppings li {
   margin: 20px auto;
 }
 
-#order-summary {
+#js-order-summary {
   border-top: 1px solid black;
 }
 
-#order-summary h4,
-#price {
+#js-order-summary h4,
+#js-price {
   margin: 46px;
 }
 
-#price p span:hover {
+#js-price p span:hover {
   background-color: red;
   cursor: pointer;
 }
 
-#proceed {
+#js-proceed {
   width: 79%;
   margin: 10px 0% 30px 11%;
   height: 40px;
