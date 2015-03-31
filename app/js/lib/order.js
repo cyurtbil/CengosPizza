@@ -5,7 +5,14 @@ var selectPizza = function(event) {
     return pizza.type === $(event.delegateTarget).attr('id');
   })[0];
   Order.items.push(selectedPizza);
-  $('<p>').text(selectedPizza.name).prepend('<span> x </span>').appendTo('#price');
+  var groupedItems = _.groupBy(Order.items, 'name');
+  var quantity = groupedItems[selectedPizza.name].length;
+  if(quantity > 1) {
+    var filteredElement = $('#price p').filter(function() {return $(this).text().replace(/\sx./g, '') === selectedPizza.name});
+    filteredElement.children().eq(1).val(quantity);
+  } else {
+    $('<p>').text(selectedPizza.name).append('<input type="number" value="1">').prepend('<span> x </span>').appendTo('#price');
+  }
   $('#order-summary').slideDown(300);
 };
 
@@ -17,7 +24,11 @@ var deselectPizza = function(event) {
   })[0];
   deselectedPizzaIndex = Order.items.indexOf(deselectedPizza);
   Order.items.splice(deselectedPizzaIndex, 1);
-  $('#price p').eq(deselectedPizzaIndex).fadeOut(200);
+  if(deselectedPizzaIndex < 0) {
+    $('#price p').last().fadeOut(200);
+  } else {
+    $('#price p').eq(deselectedPizzaIndex).fadeOut(200);
+  }
 }
 
 var findSelectedCity = function() {
