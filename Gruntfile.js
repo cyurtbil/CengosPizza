@@ -49,7 +49,9 @@ module.exports = function(grunt) {
       unit: {
         configFile: 'test/pizza.conf.js',
         options: {
-          files: ['**.spec.js']
+          files: [
+          '**.spec.js'
+          ]
         },
         autoWatch: true
       }

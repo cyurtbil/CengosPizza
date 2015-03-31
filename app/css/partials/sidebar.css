@@ -13,14 +13,14 @@ aside {
   border-radius: 4px;
 }
 
-aside ul {
+aside ul#cities {
   list-style: none;
   padding: 0px;
   text-align: center;
   margin: 0px;
 }
 
-aside ul li {
+aside ul#cities li {
   font-size: 1.2em;
   padding: 10px 0%;
 }

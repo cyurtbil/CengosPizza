@@ -1,8 +1,10 @@
 describe('Pizza Web Application', function() {
 
   beforeEach(function() {
+    jasmine.getFixtures().fixturesPath = 'test/fixtures';
+    var ul = loadFixtures('city-list.html');
     this.PizzaChain = {
-      newYork: {
+      'New York': {
         cheese: {
           name: 'Original New York',
           toppings: []
@@ -16,7 +18,7 @@ describe('Pizza Web Application', function() {
           toppings: ['Mushrooms', 'Ricotta Cheese', 'Arugula', 'Broccoli']
         }
       },
-      chicago: {
+      'Chicago': {
         cheese: {
           name: 'Classico Chicago',
           toppings: []
@@ -30,7 +32,7 @@ describe('Pizza Web Application', function() {
           toppings: ['Mushrooms', 'Black Olives', 'Spinach', 'Green Tomato']
         }
       },
-      sanFrancisco: {
+      'San Francisco': {
         cheese: {
           name: 'Simply Simple',
           toppings: []
@@ -48,7 +50,13 @@ describe('Pizza Web Application', function() {
   });
 
   it('should contain the right information', function() {
-    expect(this.PizzaChain.newYork.meat.name).toEqual('Meat Lovers');
+    expect(this.PizzaChain['New York'].meat.name).toEqual('Meat Lovers');
+  });
+
+  it("should view the cities of the franchise", function() {
+    for(var city in this.PizzaChain)
+      $('ul#cities').append('<li>' + city + '</li>');
+    expect($('ul#cities li:nth-child(1)').html()).toEqual('New York');
   });
 
 });
