@@ -6,7 +6,10 @@ var selectCityEvent = function() {
 };
 
 var selectPizzaEvent = function() {
+  var empty = [];
   $('.pizza').on('click', function(event) {
-    selectPizza(event);
+    var prices = selectPizza(event, empty);
+    var totalPrice = calcTotalPrice(prices);
+    $('div#price div').text('Total: ' + totalPrice);
   });
 };
