@@ -8,6 +8,7 @@ $(document).ready(function() {
   checkoutEvent();
   changeOrderEvent();
   deselectPizzaEvent();
+  incrementQuantityEvent();
 });
 
 loadCities();

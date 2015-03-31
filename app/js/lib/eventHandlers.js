@@ -48,3 +48,12 @@ var changeOrderEvent = function() {
     $('#pizza-container').slideDown(300);
   });
 };
+
+var incrementQuantityEvent = function() {
+  $('#price').delegate('input[type="number"]', 'keyup change', function(event) {
+    incrementQuantity(event);
+    var totalPrice = calcTotalPrice();
+    Order.payment = totalPrice.toPrecision(4);
+    $('#price #total').text('Total: $' + Order.payment);
+  });
+};

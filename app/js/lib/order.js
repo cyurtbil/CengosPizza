@@ -21,8 +21,7 @@ var selectPizza = function(event) {
 };
 
 var deselectPizza = function(event) {
-  var selectedCity, selectedPizza, deselectedPizzaIndex;
-  selectedCity = findSelectedCity();
+  var deselectedPizzas, deselectedPizzaIndex;
   deselectedPizzas = Order.items.filter(function(item) {
     return item.name === $(event.target).parent().text();
   });
@@ -39,6 +38,22 @@ var deselectPizza = function(event) {
     $(event.target).parent().remove();
   }
 }
+
+var incrementQuantity = function(event) {
+  var currentValue, newValue;
+  selectedPizzas = Order.items.filter(function(item) {
+    return item.name === $(event.target).parent().text();
+  });
+  currentValue = selectedPizzas.length;
+  newValue = parseInt($(event.target).val());
+  debugger
+  if(newValue > currentValue) {
+    Order.items.push(selectedPizzas[0]);
+  } else if(newValue < currentValue) {
+    var selectedPizzaIndex = Order.items.indexOf(selectedPizzas[0]);
+    Order.items.splice(selectedPizzaIndex, 1);
+  }
+};
 
 var findSelectedCity = function() {
   for(var city in PizzaChain)
