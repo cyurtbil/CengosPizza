@@ -15,9 +15,8 @@ var selectPizzaEvent = function() {
   });
 };
 
-var proceed = function() {
+var proceedEvent = function() {
   $('#proceed').on('click', function() {
-    $('form').slideDown(300);
-    $('p strong').text('Total: $' + Order.payment);
+    proceed();
   });
 };

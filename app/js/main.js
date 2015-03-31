@@ -1,9 +1,9 @@
-'use strict;'
+'use strict';
 
 $(document).ready(function() {
   selectCityEvent();
   selectPizzaEvent();
-  proceed();
+  proceedEvent();
 });
 
 loadCities();

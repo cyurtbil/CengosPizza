@@ -28,3 +28,8 @@ var calcTotalPrice = function(prices) {
 
   return sum;
 };
+
+var proceed = function() {
+  $('form').slideDown(300);
+  $('p strong').text('Total: $' + Order.payment);
+};
