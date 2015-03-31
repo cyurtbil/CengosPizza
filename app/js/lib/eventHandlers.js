@@ -25,5 +25,7 @@ var checkoutEvent = function() {
   $('form input[value="Checkout"]').on('click', function(event) {
     event.preventDefault();
     checkout();
+    for(var info in Order.customer)
+      $('<p>').text(Order.customer[info]).appendTo('section#order-completed');
   });
 };
