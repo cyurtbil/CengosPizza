@@ -8,9 +8,10 @@ var selectCityEvent = function() {
 };
 
 var selectPizzaEvent = function() {
+  var totalPrice;
   $('.pizza').on('click', function(event) {
     selectPizza(event);
-    var totalPrice = calcTotalPrice();
+    totalPrice = calcTotalPrice();
     Order.payment = totalPrice.toPrecision(4);
     $('div#price div').text('Total: $' + Order.payment);
   });

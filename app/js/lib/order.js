@@ -1,6 +1,7 @@
 var selectPizza = function(event) {
-  var selectedCity = findSelectedCity();
-  var selectedPizza = PizzaChain[selectedCity].pizzas.filter(function(pizza) {
+  var selectedCity, selectedPizza;
+  selectedCity = findSelectedCity();
+  selectedPizza = PizzaChain[selectedCity].pizzas.filter(function(pizza) {
     return pizza.type === $(event.delegateTarget).attr('id');
   })[0];
   Order.items.push(selectedPizza);
@@ -30,9 +31,10 @@ var proceed = function() {
 };
 
 var checkout = function() {
-  var customerName = $('form input').eq(0).val();
-  var customerAddress = $('form input').eq(1).val();
-  var customerCreditCard = $('form input').eq(2).val();
+  var customerName = $('form input').eq(0).val(), 
+  customerAddress = $('form input').eq(1).val(), 
+  customerCreditCard = $('form input').eq(2).val();
+  
   Order.customer = {name: customerName, address: customerAddress, creditCard: customerCreditCard};
   $('section#pizza-console').hide();
   $('section#order-completed').show();
