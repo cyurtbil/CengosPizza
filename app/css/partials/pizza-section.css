@@ -40,6 +40,11 @@ ul.toppings {
   margin: 0px;
 }
 
+ul.toppings li {
+  padding: 0px;
+  margin: 0px;
+}
+
 #order-summary h4,
 #price {
   margin: 46px;

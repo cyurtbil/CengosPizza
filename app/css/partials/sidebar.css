@@ -25,7 +25,8 @@ aside ul#cities li {
   padding: 10px 0%;
 }
 
-aside ul#cities li:hover {
+aside ul#cities li:hover,
+.hovered {
   cursor: pointer;
   background-color: lightblue;
 }

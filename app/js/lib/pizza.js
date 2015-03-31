@@ -1,44 +1,59 @@
 var PizzaChain = {
   'New York': {
-    cheese: {
-      name: 'Original New York',
-      toppings: ['Made with finest cheeses.']
-    },
-    meat: {
-      name: 'Meat Lovers',
-      toppings: ['Onions', 'Pepperoni', 'Italian Sausage']
-    },
-    veggie: {
-      name: 'Healthy Choice',
-      toppings: ['Mushrooms', 'Ricotta Cheese', 'Arugula', 'Broccoli']
-    }
+    pizzas: [
+      {
+        name: 'Original New York',
+        type: "cheese",
+        toppings: ['Made with finest cheeses.']
+      },
+      {
+        name: 'Meat Lovers',
+        type: "meat",
+        toppings: ['Onions', 'Pepperoni', 'Italian Sausage']
+      },
+      {
+        name: 'Healthy Choice',
+        type: "veggie",
+        toppings: ['Mushrooms', 'Ricotta Cheese', 'Arugula', 'Broccoli']
+      }
+    ]
   },
   'Chicago': {
-    cheese: {
-      name: 'Classico Chicago',
-      toppings: ['Made with finest cheeses.']
-    },
-    meat: {
-      name: 'Carnivore Special',
-      toppings: ['Rosemary Ham', 'Pepperoni', 'Tyhme', 'Banana Peppers']
-    },
-    veggie: {
-      name: 'Green Giant',
-      toppings: ['Mushrooms', 'Black Olives', 'Spinach', 'Green Tomato']
-    }
+    pizzas: [
+      {
+        name: 'Classico Chicago',
+        type: "cheese",
+        toppings: ['Made with finest cheeses.']
+      },
+      {
+        name: 'Carnivore Special',
+        type: "meat",
+        toppings: ['Rosemary Ham', 'Pepperoni', 'Tyhme', 'Banana Peppers']
+      },
+      {
+        name: 'Green Giant',
+        type: "veggie",
+        toppings: ['Mushrooms', 'Black Olives', 'Spinach', 'Green Tomato']
+      }
+    ]
   },
   'San Francisco': {
-    cheese: {
-      name: 'Simply Simple',
-      toppings: ['Made with finest cheeses.']
-    },
-    meat: {
-      name: 'Hunters Meal',
-      toppings: ['Steak Strips', 'Pepperoni', 'Onions', 'Ranch Dressing']
-    },
-    veggie: {
-      name: 'Farmers Meal',
-      toppings: ['Mushrooms', 'Carrots', 'Asparagus']
-    }
+    pizzas: [
+      {
+        name: 'Simply Simple',
+        type: "cheese",
+        toppings: ['Made with finest cheeses.']
+      },
+      {
+        name: 'Hunters Meal',
+        type: "meat",
+        toppings: ['Steak Strips', 'Pepperoni', 'Onions', 'Ranch Dressing']
+      },
+      {
+        name: 'Farmers Meal',
+        type: "veggie",
+        toppings: ['Mushrooms', 'Carrots', 'Asparagus']
+      }
+    ]
   }
 };
