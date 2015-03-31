@@ -4,7 +4,7 @@ var loadCities = function() {
 };
 
 var loadPizzas = function(selectedCity) {
-  // unloadPizzas();
+  unloadPizzas();
   PizzaChain[selectedCity].isSelected = true;
   var pizzas = PizzaChain[selectedCity].pizzas;
   $('section h3').text(selectedCity);
@@ -19,12 +19,11 @@ var loadPizzas = function(selectedCity) {
 var unloadPizzas = function() {
   for(var city in PizzaChain) {
     if(!!PizzaChain[city].isSelected) {
-
-      for(var pizza in PizzaChain[city]) {
+      PizzaChain[city].pizzas.forEach(function(pizza) {
         pizza.toppings.forEach(function(topping, index) {
-          $('#' + pizza + ' ul.toppings li').eq(index).remove();
+          $('#' + pizza.type + ' ul.toppings li').eq(0).remove();
         });
-      }
+      });
       PizzaChain[city].isSelected = false;
     }
   }
