@@ -13,7 +13,13 @@ var selectPizzaEvent = function() {
     selectPizza(event);
     totalPrice = calcTotalPrice();
     Order.payment = totalPrice.toPrecision(4);
-    $('div#price div').text('Total: $' + Order.payment);
+    $('#price #total').text('Total: $' + Order.payment);
+  });
+};
+
+var deselectPizzaEvent = function() {
+  $('#price').on('click', function(event) {
+    deselectPizza(event);
   });
 };
 

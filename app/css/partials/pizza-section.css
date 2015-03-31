@@ -65,6 +65,11 @@ ul.toppings li {
   margin: 46px;
 }
 
+#price p span:hover {
+  background-color: red;
+  cursor: pointer;
+}
+
 #proceed {
   width: 79%;
   margin: 10px 0% 30px 11%;
