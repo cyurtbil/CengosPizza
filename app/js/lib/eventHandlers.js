@@ -1,3 +1,5 @@
+'use strict';
+
 var selectCityEvent = function() {
   $('ul#cities li').on('click', function(event) {
     $(event.target).addClass('hovered');
@@ -8,21 +10,16 @@ var selectCityEvent = function() {
 };
 
 var selectPizzaEvent = function() {
-  var totalPrice;
   $('.pizza').on('click', function(event) {
     selectPizza(event);
-    totalPrice = calcTotalPrice();
-    Order.payment = totalPrice.toPrecision(4);
-    $('#price #total').text('Total: $' + Order.payment);
+    savePrice();
   });
 };
 
 var deselectPizzaEvent = function() {
   $('#price').delegate('#remove', 'click', function(event) {
     deselectPizza(event);
-    totalPrice = calcTotalPrice();
-    Order.payment = totalPrice.toPrecision(4);
-    $('#price #total').text('Total: $' + Order.payment);
+    savePrice();
   });
 };
 
@@ -52,8 +49,6 @@ var changeOrderEvent = function() {
 var changeQuantityEvent = function() {
   $('#price').delegate('input[type="number"]', 'keyup change', function(event) {
     changeQuantity(event);
-    var totalPrice = calcTotalPrice();
-    Order.payment = totalPrice.toPrecision(4);
-    $('#price #total').text('Total: $' + Order.payment);
+    savePrice();
   });
 };
