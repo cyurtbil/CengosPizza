@@ -31,6 +31,7 @@ var calcTotalPrice = function(prices) {
 
 var proceed = function() {
   $('form').slideDown(300);
+  $('#pizza-container').slideUp(300);
   $('p strong').text('Total: $' + Order.payment);
 };
 

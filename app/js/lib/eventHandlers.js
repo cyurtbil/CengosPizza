@@ -33,6 +33,7 @@ var checkoutEvent = function() {
 var changeOrderEvent = function() {
   $('form input[value="Change Order"]').on('click', function(event) {
     event.preventDefault();
-    $('form').slideUp();
+    $('form').slideUp(300);
+    $('#pizza-container').slideDown(300);
   });
 };
