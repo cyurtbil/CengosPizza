@@ -8,5 +8,8 @@ var loadPizzas = function(city) {
   $('section h3').text(city);
   for(var pizza in pizzas) {
     $('#' + pizza + ' h4').text(pizzas[pizza].name);
+    pizzas[pizza].toppings.forEach(function(topping) {
+      $('#' + pizza + ' ul.toppings').append('<li>' + topping + '</li>');
+    });
   };
 };

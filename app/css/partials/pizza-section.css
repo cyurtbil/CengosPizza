@@ -33,6 +33,13 @@ section p {
   text-align: center;
 }
 
+ul.toppings {
+  list-style: none;
+  padding: 0px;
+  text-align: center;
+  margin: 0px;
+}
+
 #order-summary h4,
 #price {
   margin: 46px;

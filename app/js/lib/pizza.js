@@ -2,7 +2,7 @@ var PizzaChain = {
   'New York': {
     cheese: {
       name: 'Original New York',
-      toppings: []
+      toppings: ['Made with finest cheeses.']
     },
     meat: {
       name: 'Meat Lovers',
@@ -16,7 +16,7 @@ var PizzaChain = {
   'Chicago': {
     cheese: {
       name: 'Classico Chicago',
-      toppings: []
+      toppings: ['Made with finest cheeses.']
     },
     meat: {
       name: 'Carnivore Special',
@@ -30,7 +30,7 @@ var PizzaChain = {
   'San Francisco': {
     cheese: {
       name: 'Simply Simple',
-      toppings: []
+      toppings: ['Made with finest cheeses.']
     },
     meat: {
       name: 'Hunters Meal',
