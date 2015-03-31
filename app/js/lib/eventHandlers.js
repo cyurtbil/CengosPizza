@@ -29,3 +29,10 @@ var checkoutEvent = function() {
       $('<p>').text(Order.customer[info]).appendTo('section#order-completed');
   });
 };
+
+var changeOrderEvent = function() {
+  $('form input[value="Change Order"]').on('click', function(event) {
+    event.preventDefault();
+    $('form').slideUp();
+  });
+};
