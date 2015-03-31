@@ -29,6 +29,11 @@ section p {
   border-radius: 3px;
 }
 
+.pizza:hover {
+  background-color: lightblue;
+  cursor: pointer;
+}
+
 .pizza h4 {
   text-align: center;
 }

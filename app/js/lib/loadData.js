@@ -1,6 +1,5 @@
 var loadCities = function() {
   for(var city in PizzaChain)
-    // $('ul#cities').append('<li>' + city + '</li>').addClass(city.replace(/\s+/g, ''));
     $('<li>').text(city).addClass(city.replace(/\s+/g, '')).appendTo('ul#cities');
 };
 
