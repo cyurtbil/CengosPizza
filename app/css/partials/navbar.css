@@ -2,6 +2,11 @@
 /*Navbar*/
 /*=======================================*/
 
+nav {
+  margin-bottom: 33px;
+}
+
+
 nav ul#js-cities {
   list-style: none;
   padding: 0px;
