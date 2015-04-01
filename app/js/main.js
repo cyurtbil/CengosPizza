@@ -1,7 +1,6 @@
 'use strict';
 
 $(document).ready(function() {
-  Order.customer = [];
   selectCityEvent();
   selectPizzaEvent();
   proceedEvent();
@@ -9,7 +8,7 @@ $(document).ready(function() {
   changeOrderEvent();
   deselectPizzaEvent();
   changeQuantityEvent();
-  reorder();
+  reorderEvent();
 });
 
 loadCities();

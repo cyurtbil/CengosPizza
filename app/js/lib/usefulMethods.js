@@ -25,3 +25,8 @@ var changeValue = function(first, second, callbacks) {
       callback;
     });
 };
+
+var resetOrder = function() {
+  Order.items.splice(0, Order.items.length);
+  $('#js-price p').remove();
+}; 

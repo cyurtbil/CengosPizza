@@ -2,10 +2,14 @@
 
 var selectCityEvent = function() {
   $('ul#js-cities li').on('click', function(event) {
+    resetOrder();
+    savePrice();
     $(event.target).addClass('hovered');
     loadPizzas(event.target.innerHTML, event);
     $('section h2').hide();
     $('#js-pizza-container').slideDown(500);
+    $('#js-order-summary').slideUp(500);
+    $('form').slideUp(500);
   });
 };
 
@@ -13,6 +17,7 @@ var selectPizzaEvent = function() {
   $('.js-pizza').on('click', function(event) {
     selectPizza(event);
     savePrice();
+    $('#js-proceed').show();
   });
 };
 
@@ -52,7 +57,7 @@ var changeQuantityEvent = function() {
   });
 };
 
-var reorder = function() {
+var reorderEvent = function() {
   $('#js-reorder').on('click', function() {
     location.reload();
   });
