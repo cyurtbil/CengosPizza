@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 var savePrice = function() {
   var totalPrice = calcTotalPrice();
@@ -16,4 +16,12 @@ var findSelectedCity = function() {
   for(var city in PizzaChain)
     if(!!PizzaChain[city].isSelected)
         return city;
+};
+
+var changeValue = function(first, second, callbacks) {
+  var i;
+  for(i = 0; i < first - second; i++)
+    callbacks.forEach(function(callback) {
+      callback;
+    });
 };

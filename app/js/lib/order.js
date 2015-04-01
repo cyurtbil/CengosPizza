@@ -33,16 +33,12 @@ var changeQuantity = function(event) {
   currentValue = selectedPizzas.length;
   newValue = parseInt($(event.target).val());
   if(newValue > currentValue) {
-    for(i = 0; i < newValue - currentValue; i++)
-      Order.items.push(selectedPizzas[0]);
+    changeValue(newValue, currentValue, [Order.items.push(selectedPizzas[0])]);
   } else if(newValue < currentValue) {
-    for(i = 0; i < currentValue - newValue; i++) {
-      selectedPizzaIndex = Order.items.indexOf(selectedPizzas[0]);
-      Order.items.splice(selectedPizzaIndex, 1);
-      if(newValue === 0) {
-        $(event.target).parent().remove();
-      }
-    };
+    changeValue(currentValue, newValue, [selectedPizzaIndex = Order.items.indexOf(selectedPizzas[0]), Order.items.splice(selectedPizzaIndex, 1)])
+    if(newValue === 0) {
+      $(event.target).parent().remove();
+    }
   }
 };
 
