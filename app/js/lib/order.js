@@ -74,4 +74,6 @@ var checkout = function() {
   Order.customer = {name: customerName, address: customerAddress, creditCard: customerCreditCard};
   $('section#js-pizza-console').hide();
   $('section#js-order-completed').show();
+  $('nav').hide();
+  $('#js-order-way').slideDown(300).delay(3000).slideUp(300);
 };

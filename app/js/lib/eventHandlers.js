@@ -34,7 +34,7 @@ var checkoutEvent = function() {
     event.preventDefault();
     checkout();
     for(var info in Order.customer)
-      $('<p>').text(Order.customer[info]).appendTo('section#js-order-completed');
+      $('<p>').text(Order.customer[info]).insertAfter('section#js-order-completed h4');
   });
 };
 
@@ -49,5 +49,11 @@ var changeQuantityEvent = function() {
   $('#js-price').delegate('input[type="number"]', 'keyup change', function(event) {
     changeQuantity(event);
     savePrice();
+  });
+};
+
+var reorder = function() {
+  $('#js-reorder').on('click', function() {
+    location.reload();
   });
 };

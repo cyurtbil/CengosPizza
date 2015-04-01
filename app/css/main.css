@@ -24,6 +24,15 @@ body {
 #container {
   margin: 80px 20px 40px 20px;
 }
+
+#js-order-way {
+  height: 40px;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(27, 170, 27, 0.44);
+  color: rgba(0, 0, 0, 0.71);
+  padding: 10px 0%;
+}
 /*=======================================*/
 
 

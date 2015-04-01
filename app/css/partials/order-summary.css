@@ -58,7 +58,8 @@ input[type="number"] {
   color: green;
 }
 
-#js-proceed {
+#js-proceed,
+#js-reorder {
   width: 50%;
   height: 40px;
   font-size: 1em;

@@ -9,6 +9,7 @@ $(document).ready(function() {
   changeOrderEvent();
   deselectPizzaEvent();
   changeQuantityEvent();
+  reorder();
 });
 
 loadCities();
