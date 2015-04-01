@@ -1,4 +1,4 @@
-// 'use strict';
+'use strict';
 
 var savePrice = function() {
   var totalPrice = calcTotalPrice();

@@ -1,3 +1,5 @@
+'use strict';
+
 var selectPizza = function(event) {
   var selectedCity, selectedPizza, groupedItems, quantity, filteredElement;
   selectedCity = findSelectedCity();

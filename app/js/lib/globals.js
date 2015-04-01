@@ -1,3 +1,5 @@
+'use strict';
+
 var PizzaChain = {
   'New York': {
     pizzas: [

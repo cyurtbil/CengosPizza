@@ -1,31 +1,27 @@
 /*=======================================*/
-/*Sidebar*/
+/*Navbar*/
 /*=======================================*/
 
-aside {
-  width: 20%;
-  height: 400px;
-  background-color: rgb(229, 226, 226);
-  float: left;
-  border: 1px solid black;
-  margin: 10px 0.5% 10px 2%;
-  position: fixed;
-  border-radius: 4px;
+nav {
+  margin-bottom: 80px;
 }
 
-aside ul#js-cities {
+nav ul#js-cities {
   list-style: none;
   padding: 0px;
   text-align: center;
   margin: 0px;
 }
 
-aside ul#js-cities li {
+nav ul#js-cities li {
   font-size: 1.2em;
   padding: 10px 0%;
+  display: inline-block;
+  width: 33.3%;
+  box-shadow: 1px 2px 14px 1px rgb(190, 186, 186);
 }
 
-aside ul#js-cities li:hover,
+nav ul#js-cities li:hover,
 .hovered {
   cursor: pointer;
   background-color: lightblue;

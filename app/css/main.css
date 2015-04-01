@@ -1,7 +1,7 @@
 /*=======================================*/
 /*Imports*/
 /*=======================================*/
-@import url("partials/sidebar.css");
+@import url("partials/navbar.css");
 @import url("partials/pizza-section.css");
 @import url("partials/form.css");
 /*=======================================*/
@@ -21,7 +21,7 @@ body {
 }
 
 #container {
-  margin-top: 80px;
+  margin: 80px 20px 40px 20px;
 }
 /*=======================================*/
 
