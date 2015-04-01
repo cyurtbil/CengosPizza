@@ -5,7 +5,7 @@ var selectCityEvent = function() {
     $(event.target).addClass('hovered');
     loadPizzas(event.target.innerHTML, event);
     $('section h2').hide();
-    $('#js-pizza-container').show();
+    $('#js-pizza-container').slideDown(500);
   });
 };
 

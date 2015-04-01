@@ -5,9 +5,7 @@
 section {
   width: 100%;
   background-color: rgb(229, 226, 226);
-  /*float: right;*/
   border: 1px solid black;
-  /*margin: 10px 2% 10px 0.5%;*/
   border-radius: 4px;
 }
 
@@ -26,10 +24,10 @@ section p {
 }
 
 .js-pizza {
-  height: 211px;
-  width: 200px;
+  height: 237px;
+  width: 223px;
   border: 1px solid black;
-  margin: 0px 0% 35px 8.6%;
+  margin: 0px 0% 35px 10.6%;
   display: inline-block;
   border-radius: 3px;
 }
