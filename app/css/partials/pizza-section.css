@@ -8,7 +8,8 @@ section {
   border-radius: 4px;
 }
 
-section h3#js-city-name {
+section h3#js-city-name,
+form h3 {
   text-align: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.14);
   border-top: 1px solid rgba(0, 0, 0, 0.14);
@@ -53,11 +54,6 @@ section p {
 
 #meat:hover {
   background-color: rgba(121, 27, 23, 0.67);
-  cursor: pointer;
-}
-
-#js-proceed:hover {
-  background-color: lightblue;
   cursor: pointer;
 }
 

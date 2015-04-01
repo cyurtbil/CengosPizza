@@ -19,7 +19,7 @@ nav ul#js-cities li {
   padding: 10px 0%;
   display: inline-block;
   width: 33.3%;
-  box-shadow: 1px 2px 14px 1px rgb(190, 186, 186);
+  box-shadow: 1px 2px 13px 1.5px rgb(236, 233, 233);
 }
 
 nav ul#js-cities li:hover,
