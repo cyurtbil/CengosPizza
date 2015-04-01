@@ -30,7 +30,7 @@ var deselectPizza = function(event) {
 }
 
 var changeQuantity = function(event) {
-  var currentValue, newValue, selectedPizzaIndex, i;
+  var currentValue, newValue, selectedPizzaIndex, i, selectedPizzas;
   selectedPizzas = findPizza(event);
   currentValue = selectedPizzas.length;
   newValue = parseInt($(event.target).val());
@@ -56,6 +56,7 @@ var changeOrder = function() {
   $('form').slideUp(300);
   $('#js-pizza-container').slideDown(300);
   $('#js-price p input').show();
+  $('#js-proceed').show();
 };
 
 var proceed = function() {
@@ -63,6 +64,7 @@ var proceed = function() {
   $('#js-pizza-container').slideUp(300);
   $('p strong').text('Total: $' + Order.payment);
   $('#js-price p input').hide();
+  $('#js-proceed').hide();
 };
 
 var checkout = function() {

@@ -9,6 +9,11 @@ form h3 {
   text-align: center;
 }
 
+form p strong {
+  font-size: 1.15em;
+  color: green;
+}
+
 form input[type="text"] {
   display: block;
   width: 79%;

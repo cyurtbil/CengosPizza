@@ -8,7 +8,7 @@ section {
   border-radius: 4px;
 }
 
-section h3 {
+section h3#js-city-name {
   text-align: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.14);
   border-top: 1px solid rgba(0, 0, 0, 0.14);
@@ -24,8 +24,11 @@ section h2 {
 }
 
 section p {
-  margin: 30px;
+  margin: 0px;
   font-size: 1.05em;
+  border-top: 1px solid rgba(0, 0, 0, 0.26);
+  padding: 28px 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.26);
 }
 
 .js-pizza {
@@ -76,27 +79,6 @@ ul.toppings {
 ul.toppings li {
   padding: 0px;
   margin: 20px auto;
-}
-
-#js-order-summary {
-  border-top: 1px solid black;
-}
-
-#js-order-summary h4,
-#js-price {
-  margin: 46px;
-}
-
-#js-price p span:hover {
-  background-color: red;
-  cursor: pointer;
-}
-
-#js-proceed {
-  width: 79%;
-  margin: 10px 0% 30px 11%;
-  height: 40px;
-  font-size: 1em;
 }
 
 
